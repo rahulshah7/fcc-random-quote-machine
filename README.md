@@ -20,6 +20,18 @@
 
 ---
 
+## Deploy to GitHub pages
+
+### `git push`
+
+Pushes source code to GitHub.
+
+### `npm run deploy`
+
+Builds app and pushes to gp-pages branch.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
