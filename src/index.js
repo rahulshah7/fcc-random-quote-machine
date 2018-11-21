@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import QuoteBox from "./components/QuoteBox";
 import * as serviceWorker from "./serviceWorker";
 import "./index.scss";
+import "normalize.css";
 
 ReactDOM.render(<QuoteBox />, document.getElementById("root"));
 
