@@ -1,4 +1,4 @@
-## Front End Libraries Projects - Build a Random Quote Machine
+## Front End Libraries Projects - Build a [Random Quote Machine]
 
 - **Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: [https://codepen.io/freeCodeCamp/full/qRZeGZ](https://codepen.io/freeCodeCamp/full/qRZeGZ).
 - Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story) and get all of the tests to pass. Give it your own personal style.
