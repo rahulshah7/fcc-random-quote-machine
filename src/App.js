@@ -48,7 +48,13 @@ export default class App extends Component {
 
   render() {
     return (
-      <Background>
+      <Background
+        styles={{
+          backgroundImage: `url(https://source.unsplash.com/random/1600x900/?${
+            this.state.cat
+          })`
+        }}
+      >
         <QuoteBox>
           <Quote quote={this.state.quote} author={this.state.author} />
           <ButtonsBar
