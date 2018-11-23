@@ -6,6 +6,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "gh-pages": "^2.0.1",
+    "materialize-css": "^1.0.0-rc.2",
     "node-sass": "^4.10.0",
     "normalize.css": "^8.0.1",
     "react": "^16.6.3",
