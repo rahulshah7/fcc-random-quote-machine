@@ -49,10 +49,11 @@ export default class App extends Component {
   render() {
     return (
       <Background
-        styles={{
-          backgroundImage: `url(https://source.unsplash.com/random/1600x900/?${
-            this.state.cat
-          })`
+        // App state causes request of new background image
+        backgroundImage={{
+          backgroundImage: `url(https://source.unsplash.com/random/${
+            window.innerWidth
+          }x${window.innerHeight}/?${this.state.cat})`
         }}
       >
         <QuoteBox>
