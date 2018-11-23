@@ -5,7 +5,7 @@ const Quote = props => {
   return (
     <div className="quote">
       <blockquote className="quote__text">
-        <p id="text">{props.quote}</p>
+        <p id="text">"{props.quote}"</p>
       </blockquote>
 
       <cite id="author" className="quote__author">

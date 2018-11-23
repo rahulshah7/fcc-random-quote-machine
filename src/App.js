@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import Background from "./components/Background";
 import QuoteBox from "./components/QuoteBox";
-import ButtonsBar from "./components/ButtonsBar";
 import Quote from "./components/Quote";
+import ButtonsBar from "./components/ButtonsBar";
 
 const axios = require("axios");
 
@@ -47,14 +48,16 @@ export default class App extends Component {
 
   render() {
     return (
-      <QuoteBox>
-        <Quote quote={this.state.quote} author={this.state.author} />
-        <ButtonsBar
-          onNewQuote={this.onNewQuote}
-          quote={this.state.quote}
-          author={this.state.author}
-        />
-      </QuoteBox>
+      <Background>
+        <QuoteBox>
+          <Quote quote={this.state.quote} author={this.state.author} />
+          <ButtonsBar
+            onNewQuote={this.onNewQuote}
+            quote={this.state.quote}
+            author={this.state.author}
+          />
+        </QuoteBox>
+      </Background>
     );
   }
 }

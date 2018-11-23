@@ -1,14 +1,6 @@
 html,
-body {
-  width: 100%;
-  height: 100%;
-}
+body,
 #root {
   width: 100%;
   height: 100%;
-  overflow: none;
-  background: rgb(32, 32, 32);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
