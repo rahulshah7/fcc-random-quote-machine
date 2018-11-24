@@ -1,0 +1,10 @@
+#buttons-bar {
+  display: flex;
+  justify-content: space-between;
+  border-top: none;
+  background-color: transparent;
+}
+#new-quote,
+#tweet-quote {
+  background-color: #1a237e;
+}

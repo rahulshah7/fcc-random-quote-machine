@@ -3,8 +3,8 @@ import "./Background.scss";
 
 const Background = props => {
   return (
-    <div style={props.backgroundImage} className="background blue darken-4">
-      {props.children}
+    <div style={props.backgroundImage} className="background">
+      <div className="container">{props.children}</div>
     </div>
   );
 };

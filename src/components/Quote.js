@@ -8,8 +8,8 @@ const Quote = props => {
         <p id="text">"{props.quote}"</p>
       </blockquote>
 
-      <cite id="author" className="quote__author">
-        – {props.author}
+      <cite id="author">
+        <p className="quote__author center-align">– {props.author}</p>
       </cite>
     </div>
   );

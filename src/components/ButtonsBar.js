@@ -1,10 +1,11 @@
 import React from "react";
+import "./ButtonsBar.scss";
 
 const ButtonsBar = props => {
   return (
-    <div className="buttons-bar">
+    <div id="buttons-bar" className="card-action">
       <a
-        className="buttons-bar__tweet"
+        className="buttons-bar__tweet btn"
         id="tweet-quote"
         href={encodeURI(
           `https://twitter.com/intent/tweet?text="${props.quote}" - ${
@@ -14,13 +15,13 @@ const ButtonsBar = props => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Tweet
+        <i class="fab fa-twitter" />
       </a>
 
       <button
         onClick={props.onNewQuote}
         id="new-quote"
-        className="buttons-bar__new-quote"
+        className="buttons-bar__new-quote btn"
       >
         New Quote
       </button>
