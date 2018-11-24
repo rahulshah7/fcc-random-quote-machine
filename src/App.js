@@ -4,6 +4,7 @@ import QuoteBox from "./components/QuoteBox";
 import Quote from "./components/Quote";
 import ButtonsBar from "./components/ButtonsBar";
 
+const randomColor = require("randomcolor");
 const axios = require("axios");
 
 export default class App extends Component {
@@ -14,7 +15,8 @@ export default class App extends Component {
     this.state = {
       author: "",
       cat: "",
-      quote: ""
+      quote: "",
+      color: ""
     };
   }
 
@@ -31,7 +33,9 @@ export default class App extends Component {
       .get("https://talaikis.com/api/quotes/random/")
       .then(response => {
         // handle success
-        this.setState(response.data);
+        let data = response.data;
+        data.color = randomColor({ luminosity: "dark" });
+        this.setState(data);
       })
       .catch(error => {
         // handle error
@@ -39,7 +43,8 @@ export default class App extends Component {
         this.setState({
           author: "Pythagoras",
           cat: "silence",
-          quote: "A fool is known by his speech; and a wise man by silence. "
+          quote: "A fool is known by his speech; and a wise man by silence.",
+          color: randomColor({ luminosity: "dark" })
         });
       });
   }
@@ -49,19 +54,23 @@ export default class App extends Component {
   render() {
     return (
       <Background
-        // App state causes request of new background image
-        backgroundImage={{
-          backgroundImage: `url(https://source.unsplash.com/random/${
-            window.innerWidth
-          }x${window.innerHeight}/?${this.state.cat})`
-        }}
+        // "cat" state change causes request of new background image
+        backgroundImage={`https://source.unsplash.com/random/${
+          window.innerWidth
+        }x${window.innerHeight}/?${this.state.cat}`}
+        color={this.state.color}
       >
         <QuoteBox>
-          <Quote quote={this.state.quote} author={this.state.author} />
+          <Quote
+            author={this.state.author}
+            color={this.state.color}
+            quote={this.state.quote}
+          />
           <ButtonsBar
+            author={this.state.author}
+            color={this.state.color}
             onNewQuote={this.onNewQuote}
             quote={this.state.quote}
-            author={this.state.author}
           />
         </QuoteBox>
       </Background>

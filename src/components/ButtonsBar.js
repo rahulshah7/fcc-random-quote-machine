@@ -12,16 +12,18 @@ const ButtonsBar = props => {
             props.author
           }`
         )}
-        target="_blank"
+        style={{ backgroundColor: props.color }}
         rel="noopener noreferrer"
+        target="_blank"
       >
         <i class="fab fa-twitter" />
       </a>
 
       <button
-        onClick={props.onNewQuote}
-        id="new-quote"
         className="buttons-bar__new-quote btn"
+        id="new-quote"
+        onClick={props.onNewQuote}
+        style={{ backgroundColor: props.color }}
       >
         New Quote
       </button>

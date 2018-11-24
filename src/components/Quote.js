@@ -4,7 +4,10 @@ import "./Quote.scss";
 const Quote = props => {
   return (
     <div className="quote">
-      <blockquote className="quote__text">
+      <blockquote
+        className="quote__text"
+        style={{ borderLeft: `5px solid ${props.color}` }}
+      >
         <p id="text">"{props.quote}"</p>
       </blockquote>
 

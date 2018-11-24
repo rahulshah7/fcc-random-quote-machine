@@ -3,7 +3,13 @@ import "./Background.scss";
 
 const Background = props => {
   return (
-    <div style={props.backgroundImage} className="background">
+    <div
+      style={{
+        backgroundImage: `url(${props.backgroundImage})`,
+        backgroundColor: `${props.color}`
+      }}
+      className="background"
+    >
       <div className="container">{props.children}</div>
     </div>
   );
