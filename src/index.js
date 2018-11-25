@@ -4,6 +4,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "./index.scss";
 import "materialize-css/dist/css/materialize.min.css";
+import "animate.css/animate.min.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
