@@ -1,5 +1,4 @@
 import React from "react";
-import "./QuoteBox.scss";
 
 const QuoteBox = props => {
   return (

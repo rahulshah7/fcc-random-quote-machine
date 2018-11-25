@@ -4,4 +4,5 @@
 
 .quote__text {
   border-left: 5px solid #1a237e;
+  transition: border-color $transition-duration linear;
 }
