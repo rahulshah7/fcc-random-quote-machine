@@ -15,7 +15,7 @@ const ButtonsBar = props => {
         rel="noopener noreferrer"
         target="_blank"
       >
-        <i class="fab fa-twitter" />
+        <i className="fab fa-twitter" />
       </a>
 
       <button

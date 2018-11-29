@@ -7,6 +7,13 @@ import ButtonsBar from "./components/ButtonsBar";
 const randomColor = require("randomcolor");
 const axios = require("axios");
 
+/*When adjusting, also set an equal value in App.js e.g.
+```scss```
+$transition-duration: 1000ms;
+````js```
+const transitionDuration = 1000; */
+const transitionDuration = 1000;
+
 export default class App extends Component {
   constructor() {
     super();
@@ -16,26 +23,38 @@ export default class App extends Component {
       author: "",
       cat: "",
       quote: "",
-      color: ""
+      color: "",
+      fadeBool: true
     };
   }
 
   /* Life Cycle Methods */
 
   componentDidMount() {
-    this.onNewQuote();
+    this.onNewQuote(true);
   }
 
   /* Event Handlers */
 
-  onNewQuote() {
+  onNewQuote(isFirstMount = false) {
     axios
       .get("https://talaikis.com/api/quotes/random/")
       .then(response => {
         // handle success
+        if (!isFirstMount) {
+          // trigger fade out quote
+          this.setState({ fadeBool: false });
+        }
         let data = response.data;
         data.color = randomColor({ luminosity: "dark" });
-        this.setState(data);
+        data.fadeBool = true;
+
+        // trigger fade in quote
+        if (!isFirstMount) {
+          setTimeout(() => this.setState(data), transitionDuration);
+        } else {
+          this.setState(data);
+        }
       })
       .catch(error => {
         // handle error
@@ -59,17 +78,20 @@ export default class App extends Component {
           window.innerWidth
         }x${window.innerHeight}/?${this.state.cat}`}
         color={this.state.color}
+        transitionDuration={transitionDuration}
       >
         <QuoteBox>
           <Quote
             author={this.state.author}
             color={this.state.color}
+            fadeBool={this.state.fadeBool}
             quote={this.state.quote}
+            transitionDuration={transitionDuration}
           />
           <ButtonsBar
             author={this.state.author}
             color={this.state.color}
-            onNewQuote={this.onNewQuote}
+            onNewQuote={() => this.onNewQuote(false)}
             quote={this.state.quote}
           />
         </QuoteBox>
