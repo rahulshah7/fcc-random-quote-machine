@@ -1,8 +1,9 @@
 @import "./variables";
 
 @import "./utility/fade";
+@import "./utility/zindex";
 
-@import "./components/Background";
-@import "./components/ButtonsBar";
-@import "./components/Quote";
-@import "./components/QuoteBox";
+@import "./component/Background";
+@import "./component/ButtonsBar";
+@import "./component/Quote";
+@import "./component/QuoteBox";

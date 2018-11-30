@@ -9,6 +9,7 @@ const Background = props => {
       }}
       className="background"
     >
+      <div class="background-overlay" />
       <div className="container">{props.children}</div>
     </div>
   );

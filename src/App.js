@@ -12,7 +12,7 @@ const axios = require("axios");
 $transition-duration: 1000ms;
 ````js```
 const transitionDuration = 1000; */
-const transitionDuration = 1000;
+const transitionDuration = 1200;
 
 export default class App extends Component {
   constructor() {
