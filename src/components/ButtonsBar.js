@@ -4,7 +4,7 @@ const ButtonsBar = props => {
   return (
     <div id="buttons-bar" className="card-action">
       <a
-        className="buttons-bar__tweet btn"
+        className="buttons-bar__tweet btn waves-effect waves-light"
         id="tweet-quote"
         href={encodeURI(
           `https://twitter.com/intent/tweet?text="${props.quote}" - ${
@@ -19,7 +19,7 @@ const ButtonsBar = props => {
       </a>
 
       <button
-        className="buttons-bar__new-quote btn"
+        className="buttons-bar__new-quote btn waves-effect waves-light"
         id="new-quote"
         onClick={props.onNewQuote}
         style={{ backgroundColor: props.color }}
