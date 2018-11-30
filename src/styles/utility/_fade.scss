@@ -3,7 +3,7 @@
 
   &-active {
     opacity: 1;
-    transition: opacity $transition-duration ease-in-out;
+    transition: opacity $transition-duration ease-out;
   }
 
   &-done {
@@ -16,7 +16,7 @@
 
   &-active {
     opacity: 0.01;
-    transition: opacity $transition-duration ease-in-out;
+    transition: opacity $transition-duration ease-in;
   }
 
   &-done {

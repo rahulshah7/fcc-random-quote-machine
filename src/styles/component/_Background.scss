@@ -11,7 +11,6 @@ body,
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  transition: background-color $transition-duration linear;
   z-index: map-get($zindex, background);
 }
 
@@ -27,4 +26,33 @@ body,
   height: 100%;
   position: fixed;
   z-index: map-get($zindex, background-overlay);
+}
+
+.overlay-exit {
+  opacity: 0;
+
+  &-active {
+    opacity: 1;
+    transition: opacity $transition-duration linear,
+      background-color $transition-duration linear;
+  }
+
+  &-done {
+    opacity: 1;
+  }
+}
+
+.overlay-enter {
+  opacity: 1;
+
+  &-active {
+    opacity: 1;
+    transition: opacity 0 linear $transition-duration / 2,
+      background-color $transition-duration linear;
+  }
+
+  &-done {
+    transition: opacity $transition-duration / 2 linear;
+    opacity: 0;
+  }
 }

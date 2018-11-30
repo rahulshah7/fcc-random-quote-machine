@@ -12,7 +12,7 @@ const axios = require("axios");
 $transition-duration: 1000ms;
 ````js```
 const transitionDuration = 1000; */
-const transitionDuration = 1200;
+const transitionDuration = 1000;
 
 export default class App extends Component {
   constructor() {
@@ -78,6 +78,7 @@ export default class App extends Component {
           window.innerWidth
         }x${window.innerHeight}/?${this.state.cat}`}
         color={this.state.color}
+        fadeBool={this.state.fadeBool}
         transitionDuration={transitionDuration}
       >
         <QuoteBox>
