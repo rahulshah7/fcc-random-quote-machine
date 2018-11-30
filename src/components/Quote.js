@@ -10,7 +10,7 @@ const Quote = props => {
       >
         <CSSTransition
           in={props.fadeBool}
-          classNames="fade"
+          classNames="fade-quote"
           timeout={props.transitionDuration}
         >
           <p id="text">"{props.quote}"</p>
@@ -20,7 +20,7 @@ const Quote = props => {
       <cite id="author">
         <CSSTransition
           in={props.fadeBool}
-          classNames="fade"
+          classNames="fade-quote"
           timeout={props.transitionDuration}
         >
           <p className="quote__author center-align">– {props.author}</p>

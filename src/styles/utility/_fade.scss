@@ -1,4 +1,6 @@
-.fade-enter {
+/* Quote Text Fade classes */
+
+.fade-quote-enter {
   opacity: 0.01;
 
   &-active {
@@ -11,7 +13,7 @@
   }
 }
 
-.fade-exit {
+.fade-quote-exit {
   opacity: 1;
 
   &-active {
@@ -20,6 +22,37 @@
   }
 
   &-done {
+    opacity: 0;
+  }
+}
+
+/* Background Overlay Fade classes */
+
+.overlay-exit {
+  opacity: 0;
+
+  &-active {
+    opacity: 1;
+    transition: opacity $transition-duration linear,
+      background-color $transition-duration linear;
+  }
+
+  &-done {
+    opacity: 1;
+  }
+}
+
+.overlay-enter {
+  opacity: 1;
+
+  &-active {
+    opacity: 1;
+    transition: opacity 0 linear $transition-duration / 2,
+      background-color $transition-duration linear;
+  }
+
+  &-done {
+    transition: opacity $transition-duration / 2 linear;
     opacity: 0;
   }
 }
