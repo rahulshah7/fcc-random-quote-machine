@@ -15,7 +15,7 @@ const Background = props => {
         timeout={props.transitionDuration}
       >
         <div
-          class="background-overlay"
+          className="background-overlay"
           style={{ backgroundColor: `${props.color}` }}
         />
       </CSSTransition>
