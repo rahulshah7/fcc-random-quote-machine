@@ -7,7 +7,7 @@ import ButtonsBar from "./components/ButtonsBar";
 const randomColor = require("randomcolor");
 const axios = require("axios");
 
-/*When adjusting, also set an equal value in App.js e.g.
+/*When adjusting, also set an equal value in _variables.scss e.g.
 ```scss```
 $transition-duration: 1000ms;
 ````js```
