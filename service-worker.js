@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/fcc-random-quote-machine/precache-manifest.1c60b7161421ece2da77d00c531d3c37.js"
+  "/fcc-random-quote-machine/precache-manifest.281daf10d2f5c5ea4bbc0b0565bb24b8.js"
 );
 
 workbox.clientsClaim();
