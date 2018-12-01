@@ -16,7 +16,6 @@ const Background = props => {
       >
         <div className="background-overlay blue-grey lighten-5" />
       </CSSTransition>
-
       <div className="container">{props.children}</div>
     </div>
   );
