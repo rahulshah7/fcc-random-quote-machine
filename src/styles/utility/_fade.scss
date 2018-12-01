@@ -1,15 +1,16 @@
 /* Quote Text Fade classes */
 
 .fade-quote-enter {
-  opacity: 0.01;
+  opacity: 0;
 
   &-active {
     opacity: 1;
-    transition: opacity $transition-duration ease-out;
+    transition: opacity $transition-duration linear $transition-duration / 1.5;
   }
 
   &-done {
     opacity: 1;
+    transition: opacity $transition-duration linear;
   }
 }
 
@@ -17,8 +18,8 @@
   opacity: 1;
 
   &-active {
-    opacity: 0.01;
-    transition: opacity $transition-duration ease-in;
+    opacity: 0;
+    transition: opacity $transition-duration linear;
   }
 
   &-done {
