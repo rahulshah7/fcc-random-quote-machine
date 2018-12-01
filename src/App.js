@@ -24,7 +24,7 @@ export default class App extends Component {
       cat: "",
       quote: "",
       color: "",
-      fadeBool: true
+      fadeBool: false
     };
   }
 
