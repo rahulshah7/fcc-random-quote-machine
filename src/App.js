@@ -1,11 +1,11 @@
+import axios from "axios";
+import randomColor from "randomcolor";
 import React, { Component } from "react";
+
 import Background from "./components/Background";
+import ButtonsBar from "./components/ButtonsBar";
 import QuoteBox from "./components/QuoteBox";
 import Quote from "./components/Quote";
-import ButtonsBar from "./components/ButtonsBar";
-
-const randomColor = require("randomcolor");
-const axios = require("axios");
 
 /*When adjusting, also set an equal value in _variables.scss e.g.
 ```scss```
