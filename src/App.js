@@ -45,9 +45,11 @@ export default class App extends Component {
           // trigger fade out quote
           this.setState({ fadeBool: false });
         }
-        let data = response.data;
-        data.color = randomColor({ luminosity: "dark" });
-        data.fadeBool = true;
+        const data = {
+          ...response.data,
+          color: randomColor({ luminosity: "dark" }),
+          fadeBool: true
+        };
 
         // trigger fade in quote
         if (!isFirstMount) {
