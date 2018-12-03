@@ -21,7 +21,7 @@ export default class App extends Component {
 
     this.state = {
       author: "",
-      cat: "",
+      category: "",
       quote: "",
       color: "",
       fadeBool: false
@@ -45,8 +45,14 @@ export default class App extends Component {
           // trigger fade out quote
           this.setState({ fadeBool: false });
         }
+
+        // rename "cat" key returned from api to "category"
+        const { author, cat: category, quote } = response.data;
+
         const data = {
-          ...response.data,
+          author,
+          category,
+          quote,
           color: randomColor({ luminosity: "dark" }),
           fadeBool: true
         };
@@ -63,7 +69,7 @@ export default class App extends Component {
         console.log(error);
         this.setState({
           author: "Pythagoras",
-          cat: "silence",
+          category: "silence",
           quote: "A fool is known by his speech; and a wise man by silence.",
           color: randomColor({ luminosity: "dark" })
         });
@@ -75,10 +81,10 @@ export default class App extends Component {
   render() {
     return (
       <Background
-        // "cat" state change causes request of new background image
+        // "category" state change causes request of new background image
         backgroundImage={`https://source.unsplash.com/random/${
           window.innerWidth
-        }x${window.innerHeight}/?${this.state.cat}`}
+        }x${window.innerHeight}/?${this.state.category}`}
         color={this.state.color}
         fadeBool={this.state.fadeBool}
         transitionDuration={transitionDuration}
