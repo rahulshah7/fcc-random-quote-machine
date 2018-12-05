@@ -52,6 +52,6 @@
 
   &-done {
     opacity: 0;
-    transition: opacity $transition-duration linear;
+    transition: opacity $transition-duration linear $transition-duration;
   }
 }
