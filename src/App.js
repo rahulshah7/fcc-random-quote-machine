@@ -76,29 +76,31 @@ export default class App extends Component {
   /* Render Method */
 
   render() {
+    const { author, category, color, fadeBool, quote } = this.state;
+
     return (
       <Background
         // "category" state change causes request of new background image
         backgroundImage={`https://source.unsplash.com/random/${
           window.innerWidth
-        }x${window.innerHeight}/?${this.state.category}`}
-        color={this.state.color}
-        fadeBool={this.state.fadeBool}
+        }x${window.innerHeight}/?${category}`}
+        color={color}
+        fadeBool={fadeBool}
         transitionDuration={transitionDuration}
       >
         <QuoteBox>
           <Quote
-            author={this.state.author}
-            color={this.state.color}
-            fadeBool={this.state.fadeBool}
-            quote={this.state.quote}
+            author={author}
+            color={color}
+            fadeBool={fadeBool}
+            quote={quote}
             transitionDuration={transitionDuration}
           />
           <ButtonsBar
-            author={this.state.author}
-            color={this.state.color}
+            author={author}
+            color={color}
             onNewQuote={() => this.onNewQuote(false)}
-            quote={this.state.quote}
+            quote={quote}
           />
         </QuoteBox>
       </Background>
