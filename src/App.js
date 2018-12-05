@@ -46,16 +46,13 @@ export default class App extends Component {
           this.setState({ fadeBool: false });
         }
 
-        // rename "cat" key returned from api to "category"
-        const { author, cat: category, quote } = response.data;
-
-        const data = {
-          author,
-          category,
-          quote,
+        let data = {
+          ...response.data,
+          category: response.data.cat,
           color: randomColor({ luminosity: "dark" }),
           fadeBool: true
         };
+        delete data.cat;
 
         // trigger fade in quote
         if (!isFirstMount) {
