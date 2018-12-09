@@ -46,13 +46,15 @@ export default class App extends Component {
           this.setState({ fadeBool: false });
         }
 
-        let data = {
-          ...response.data,
-          category: response.data.cat,
+        const { author, cat: category, quote } = response.data;
+
+        const data = {
+          author,
+          category,
+          quote,
           color: randomColor({ luminosity: "dark" }),
           fadeBool: true
         };
-        delete data.cat;
 
         // trigger fade in quote
         if (!isFirstMount) {
