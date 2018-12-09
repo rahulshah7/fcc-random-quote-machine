@@ -21,6 +21,7 @@ export default class App extends Component {
 
     this.state = {
       author: "",
+      backgroundImage: "",
       category: "",
       quote: "",
       color: "",
@@ -48,7 +49,7 @@ export default class App extends Component {
 
         const { author, cat: category, quote } = response.data;
 
-        const data = {
+        let data = {
           author,
           category,
           quote,
@@ -56,12 +57,23 @@ export default class App extends Component {
           fadeBool: true
         };
 
-        // trigger fade in quote
-        if (!isFirstMount) {
-          setTimeout(() => this.setState(data), transitionDuration);
-        } else {
-          this.setState(data);
-        }
+        // request background image
+        axios
+          .get(
+            `https://source.unsplash.com/random/${window.innerWidth}x${
+              window.innerHeight
+            }/?${category}`
+          )
+          .then(response => {
+            // remember background image url
+            data.backgroundImage = response.request.responseURL;
+            // trigger fade in quote
+            if (!isFirstMount) {
+              setTimeout(() => this.setState(data), transitionDuration);
+            } else {
+              this.setState(data);
+            }
+          });
       })
       .catch(error => {
         // handle error
@@ -78,14 +90,12 @@ export default class App extends Component {
   /* Render Method */
 
   render() {
-    const { author, category, color, fadeBool, quote } = this.state;
+    const { author, backgroundImage, color, fadeBool, quote } = this.state;
 
     return (
       <Background
         // "category" state change causes request of new background image
-        backgroundImage={`https://source.unsplash.com/random/${
-          window.innerWidth
-        }x${window.innerHeight}/?${category}`}
+        backgroundImage={backgroundImage}
         color={color}
         fadeBool={fadeBool}
         transitionDuration={transitionDuration}
