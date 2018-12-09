@@ -19,12 +19,15 @@ export default class App extends Component {
     super();
     this.onNewQuote = this.onNewQuote.bind(this);
 
+    this.fallbackQuote = {
+      author: "Pythagoras",
+      category: "silence",
+      quote: "A fool is known by his speech; and a wise man by silence.",
+      color: randomColor({ luminosity: "dark" })
+    };
+
     this.state = {
-      author: "",
-      backgroundImage: "",
-      category: "",
-      quote: "",
-      color: "",
+      ...this.fallbackQuote,
       fadeBool: false
     };
   }
@@ -78,12 +81,7 @@ export default class App extends Component {
       .catch(error => {
         // handle error
         console.log(error);
-        this.setState({
-          author: "Pythagoras",
-          category: "silence",
-          quote: "A fool is known by his speech; and a wise man by silence.",
-          color: randomColor({ luminosity: "dark" })
-        });
+        this.setState(this.fallbackQuote);
       });
   }
 
