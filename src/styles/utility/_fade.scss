@@ -5,7 +5,7 @@
 
   &-active {
     opacity: 1;
-    transition: opacity $transition-duration linear $transition-duration / 1.5;
+    transition: opacity $transition-duration linear;
   }
 
   &-done {
@@ -46,12 +46,11 @@
   opacity: 1;
 
   &-active {
-    opacity: 1;
-    transition: opacity 0 linear $transition-duration;
+    opacity: 0;
+    transition: opacity $transition-duration linear;
   }
 
   &-done {
     opacity: 0;
-    transition: opacity $transition-duration linear $transition-duration;
   }
 }
