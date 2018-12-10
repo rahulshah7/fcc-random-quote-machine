@@ -12,7 +12,7 @@ import Quote from "./components/Quote";
 $transition-duration: 1000ms;
 ````js```
 const transitionDuration = 1000; */
-const transitionDuration = 500;
+const transitionDuration = 1000;
 
 export default class App extends Component {
   constructor() {
@@ -72,7 +72,7 @@ export default class App extends Component {
             data.backgroundImage = response.request.responseURL;
             // trigger fade in quote
             if (!isFirstMount) {
-              setTimeout(() => this.setState(data), transitionDuration);
+              setTimeout(() => this.setState(data), 10);
             } else {
               this.setState(data);
             }
