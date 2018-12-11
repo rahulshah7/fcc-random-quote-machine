@@ -49,7 +49,7 @@ export default class App extends Component {
           // trigger fade out quote
           this.setState({ fadeBool: false });
         }
-
+        // remember quote data from talaikis response
         const { author, cat: category, quote } = response.data;
 
         let data = {
@@ -68,14 +68,10 @@ export default class App extends Component {
             }/?${category}`
           )
           .then(response => {
-            // remember background image url
+            // remember background image url from unsplash response
             data.backgroundImage = response.request.responseURL;
             // trigger fade in quote
-            if (!isFirstMount) {
-              setTimeout(() => this.setState(data), 10);
-            } else {
-              this.setState(data);
-            }
+            this.setState(data);
           });
       })
       .catch(error => {
