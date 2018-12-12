@@ -14,7 +14,7 @@ import Quote from "./components/Quote";
 $transition-duration: 1000ms;
 ````js```
 const transitionDuration = 1000; */
-const transitionDuration = 1000;
+const transitionDuration = 750;
 
 export default class App extends Component {
   constructor() {

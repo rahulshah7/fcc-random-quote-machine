@@ -7,7 +7,7 @@ const Background = props => {
       style={{
         backgroundImage: `url(${props.backgroundImage})`
       }}
-      className="background"
+      className="background blue-grey lighten-4"
     >
       <CSSTransition
         in={props.fadeBool}
