@@ -1,7 +1,7 @@
-import axios from "axios";
 import randomColor from "randomcolor";
 import React, { Component } from "react";
 
+import talaikis from "./API/talaikis";
 import unsplash from "./API/unsplash";
 
 import Background from "./components/Background";
@@ -44,28 +44,23 @@ export default class App extends Component {
   /* Event Handlers */
 
   onNewQuote(isFirstMount = false) {
-    axios
-      .get("https://talaikis.com/api/quotes/random/")
-      .then(response => {
-        // handle success
+    talaikis()
+      .then(quoteData => {
         if (!isFirstMount) {
           // trigger fade out quote
           this.setState({ fadeBool: false });
         }
-        // remember quote data from talaikis response
-        const { author, cat: category, quote } = response.data;
 
         let data = {
-          author,
-          category,
-          quote,
+          ...quoteData,
           color: randomColor({ luminosity: "dark" }),
           fadeBool: true
         };
 
-        // Get background image and update state
-        unsplash(category).then(URL => {
+        // Update data with background image
+        unsplash(quoteData.category).then(URL => {
           data.backgroundImage = URL;
+          // Update state to trigger fade in new quote
           this.setState(data);
         });
       })
