@@ -2,6 +2,8 @@ import axios from "axios";
 import randomColor from "randomcolor";
 import React, { Component } from "react";
 
+import unsplash from "./API/unsplash";
+
 import Background from "./components/Background";
 import ButtonsBar from "./components/ButtonsBar";
 import QuoteBox from "./components/QuoteBox";
@@ -60,19 +62,11 @@ export default class App extends Component {
           fadeBool: true
         };
 
-        // request background image
-        axios
-          .get(
-            `https://source.unsplash.com/random/${window.innerWidth}x${
-              window.innerHeight
-            }/?${category}`
-          )
-          .then(response => {
-            // remember background image url from unsplash response
-            data.backgroundImage = response.request.responseURL;
-            // trigger fade in quote
-            this.setState(data);
-          });
+        // Get background image and update state
+        unsplash(category).then(URL => {
+          data.backgroundImage = URL;
+          this.setState(data);
+        });
       })
       .catch(error => {
         // handle error
