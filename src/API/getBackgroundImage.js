@@ -2,7 +2,7 @@ import axios from "axios";
 
 /* Return background image URL given a search term */
 
-const unsplash = searchTerm =>
+const getBackgroundImage = searchTerm =>
   new Promise(resolve => {
     axios
       .get(
@@ -15,4 +15,4 @@ const unsplash = searchTerm =>
       });
   });
 
-export default unsplash;
+export default getBackgroundImage;

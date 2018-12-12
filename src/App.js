@@ -1,8 +1,8 @@
 import randomColor from "randomcolor";
 import React, { Component } from "react";
 
-import talaikis from "./API/talaikis";
-import unsplash from "./API/unsplash";
+import getQuoteData from "./API/getQuoteData";
+import getBackgroundImage from "./API/getBackgroundImage";
 
 import Background from "./components/Background";
 import ButtonsBar from "./components/ButtonsBar";
@@ -44,7 +44,7 @@ export default class App extends Component {
   /* Event Handlers */
 
   onNewQuote(isFirstMount = false) {
-    talaikis()
+    getQuoteData()
       .then(quoteData => {
         if (!isFirstMount) {
           // trigger fade out quote
@@ -58,7 +58,7 @@ export default class App extends Component {
         };
 
         // Update data with background image
-        unsplash(quoteData.category).then(URL => {
+        getBackgroundImage(quoteData.category).then(URL => {
           data.backgroundImage = URL;
           // Update state to trigger fade in new quote
           this.setState(data);
