@@ -9,7 +9,7 @@ import ButtonsBar from "./components/ButtonsBar";
 import QuoteBox from "./components/QuoteBox";
 import Quote from "./components/Quote";
 
-/*When adjusting, also set an equal value in _variables.scss e.g.
+/* When adjusting, also set an equal value in _variables.scss e.g.
 ```scss```
 $transition-duration: 1000ms;
 ````js```
@@ -57,7 +57,6 @@ export default class App extends Component {
           fadeBool: true
         };
 
-        // Update data with background image
         getBackgroundImage(quoteData.category).then(URL => {
           data.backgroundImage = URL;
           // Update state to trigger fade in new quote
