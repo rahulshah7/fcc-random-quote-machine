@@ -21,4 +21,10 @@ const Background = props => (
   </div>
 );
 
+Background.propTypes = {
+  backgroundImage: PropTypes.string,
+  fadeBool: PropTypes.bool,
+  transitionDuration: PropTypes.number
+};
+
 export default Background;

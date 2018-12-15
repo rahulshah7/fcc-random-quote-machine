@@ -30,4 +30,11 @@ const ButtonsBar = props => (
   </div>
 );
 
+ButtonsBar.propTypes = {
+  author: PropTypes.string,
+  color: PropTypes.string,
+  onNewQuote: PropTypes.func,
+  quote: PropTypes.string
+};
+
 export default ButtonsBar;

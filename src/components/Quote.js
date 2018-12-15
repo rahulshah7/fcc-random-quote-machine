@@ -30,4 +30,12 @@ const Quote = props => (
   </div>
 );
 
+Quote.propTypes = {
+  author: PropTypes.string,
+  color: PropTypes.string,
+  fadeBool: PropTypes.bool,
+  quote: PropTypes.string,
+  transitionDuration: PropTypes.number
+};
+
 export default Quote;
