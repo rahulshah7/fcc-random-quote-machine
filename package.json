@@ -9,6 +9,7 @@
     "gh-pages": "^2.0.1",
     "materialize-css": "^1.0.0-rc.2",
     "node-sass": "^4.10.0",
+    "prop-types": "^15.6.2",
     "randomcolor": "^0.5.3",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
