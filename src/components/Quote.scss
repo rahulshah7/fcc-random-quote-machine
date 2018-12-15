@@ -1,0 +1,40 @@
+@import "../styles/utility/zindex";
+@import "../styles/variables";
+
+.quote {
+  padding: 20px;
+
+  &__text {
+    border-left: 5px solid #1a237e;
+    transition: border-color $transition-duration linear;
+  }
+}
+
+/* Quote Text Fade classes - Used with CSSTransition from react-transition-group */
+
+.fade-quote-enter {
+  opacity: 0;
+
+  &-active {
+    opacity: 1;
+    transition: opacity $transition-duration linear;
+  }
+
+  &-done {
+    opacity: 1;
+    transition: opacity $transition-duration linear;
+  }
+}
+
+.fade-quote-exit {
+  opacity: 1;
+
+  &-active {
+    opacity: 0;
+    transition: opacity $transition-duration linear;
+  }
+
+  &-done {
+    opacity: 0;
+  }
+}

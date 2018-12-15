@@ -1,4 +1,5 @@
 import React from "react";
+import "./ButtonsBar.scss";
 
 const ButtonsBar = props => {
   return (

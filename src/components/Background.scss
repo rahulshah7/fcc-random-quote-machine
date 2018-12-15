@@ -1,3 +1,6 @@
+@import "../styles/utility/zindex";
+@import "../styles/variables";
+
 html,
 body,
 #root {
@@ -26,4 +29,32 @@ body,
   height: 100%;
   position: fixed;
   z-index: map-get($zindex, background-overlay);
+}
+
+/* Background Overlay Fade classes - Used with CSSTransition from react-transition-group */
+
+.overlay-exit {
+  opacity: 0;
+
+  &-active {
+    opacity: 1;
+    transition: opacity $transition-duration linear;
+  }
+
+  &-done {
+    opacity: 1;
+  }
+}
+
+.overlay-enter {
+  opacity: 1;
+
+  &-active {
+    opacity: 0;
+    transition: opacity $transition-duration linear;
+  }
+
+  &-done {
+    opacity: 0;
+  }
 }
