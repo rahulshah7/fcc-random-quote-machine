@@ -30,7 +30,7 @@ Pushes source code to GitHub.
 
 ### `npm run deploy`
 
-Builds app and pushes to gp-pages branch.
+Builds app and pushes to gh-pages branch.
 
 ---
 
