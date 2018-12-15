@@ -35,13 +35,9 @@ export default class App extends Component {
     };
   }
 
-  /* Life Cycle Methods */
-
   componentDidMount() {
     this.onNewQuote(true);
   }
-
-  /* Event Handlers */
 
   onNewQuote(isFirstMount = false) {
     getQuoteData()
@@ -70,8 +66,6 @@ export default class App extends Component {
       });
   }
 
-  /* Render Method */
-
   render() {
     const { author, backgroundImage, color, fadeBool, quote } = this.state;
 
@@ -79,7 +73,6 @@ export default class App extends Component {
       <Background
         // "category" state change causes request of new background image
         backgroundImage={backgroundImage}
-        color={color}
         fadeBool={fadeBool}
         transitionDuration={transitionDuration}
       >
