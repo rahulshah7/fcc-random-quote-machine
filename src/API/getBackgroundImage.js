@@ -1,7 +1,11 @@
 import axios from "axios";
 
-/* Return background image URL given a search term */
-
+/**
+ * Retrieve a background image URL given a search term.
+ * @param {string} searchTerm
+ * @returns {Promise<string>} A promise that contains a background image URL
+ * string when fulfilled.
+ */
 const getBackgroundImage = searchTerm =>
   new Promise(resolve => {
     axios
