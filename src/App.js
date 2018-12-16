@@ -9,11 +9,13 @@ import ButtonsBar from "./components/ButtonsBar";
 import QuoteBox from "./components/QuoteBox";
 import Quote from "./components/Quote";
 
-/* When adjusting, also set an equal value in _variables.scss e.g.
-```scss```
+/* When adjusting transitionDuration, also set an equal value in _variables.scss e.g.
+```scss
 $transition-duration: 1000ms;
-````js```
-const transitionDuration = 1000; */
+```
+```javascript
+const transitionDuration = 1000;
+``` */
 const transitionDuration = 750;
 
 export default class App extends Component {
