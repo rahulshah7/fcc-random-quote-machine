@@ -1,6 +1,8 @@
-/*When adjusting, also set an equal value in App.js e.g.
-```scss```
+/*When adjusting transition-duration, also set an equal value in App.js e.g.
+```scss
 $transition-duration: 1000ms;
-````js```
-const transitionDuration = 1000; */
+```
+```javascript
+const transitionDuration = 1000;
+``` */
 $transition-duration: 750ms;
