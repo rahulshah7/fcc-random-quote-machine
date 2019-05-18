@@ -1,4 +1,5 @@
 import axios from "axios";
+const endpoint = "https://randomquote-api.herokuapp.com/api/random-quote";
 
 /**
  * Retrieve a random quote.
@@ -7,8 +8,8 @@ import axios from "axios";
  */
 const getQuoteData = () =>
   new Promise(resolve => {
-    axios.get("https://talaikis.com/api/quotes/random/").then(response => {
-      const { author, cat: category, quote } = response.data;
+    axios.get(endpoint).then(response => {
+      const { author, category, quote } = response.data;
       resolve({ author, category, quote });
     });
   });
