@@ -9,6 +9,8 @@ import ButtonsBar from "./components/ButtonsBar";
 import QuoteBox from "./components/QuoteBox";
 import Quote from "./components/Quote";
 
+const fallBackQuotes = require("./API/fallBackQuotes.json");
+
 /* When adjusting transitionDuration, also set an equal value in _variables.scss e.g.
 ```scss
 $transition-duration: 1000ms;
