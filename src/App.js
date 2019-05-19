@@ -42,29 +42,24 @@ export default class App extends Component {
   }
 
   onNewQuote(isFirstMount = false) {
-    getQuoteData()
-      .then(quoteData => {
-        if (!isFirstMount) {
-          // trigger fade out quote
-          this.setState({ fadeBool: false });
-        }
+    getQuoteData().then(quoteData => {
+      if (!isFirstMount) {
+        // trigger fade out quote
+        this.setState({ fadeBool: false });
+      }
 
-        let data = {
-          ...quoteData,
-          color: randomColor({ luminosity: "dark" }),
-          fadeBool: true
-        };
+      let data = {
+        ...quoteData,
+        color: randomColor({ luminosity: "dark" }),
+        fadeBool: true
+      };
 
-        getBackgroundImage(quoteData.category).then(URL => {
-          data.backgroundImage = URL;
-          // Update state to trigger fade in new quote
-          this.setState(data);
-        });
-      })
-      .catch(error => {
-        // handle error
-        this.setState(this.initialQuoteData);
+      getBackgroundImage(quoteData.category).then(URL => {
+        data.backgroundImage = URL;
+        // Update state to trigger fade in new quote
+        this.setState(data);
       });
+    });
   }
 
   render() {
