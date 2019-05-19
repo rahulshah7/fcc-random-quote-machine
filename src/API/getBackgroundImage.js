@@ -16,7 +16,8 @@ const getBackgroundImage = searchTerm =>
       )
       .then(response => {
         resolve(response.request.responseURL);
-      });
+      })
+      .catch(() => resolve(""));
   });
 
 export default getBackgroundImage;
