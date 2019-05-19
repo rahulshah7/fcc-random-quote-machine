@@ -9,7 +9,7 @@ import ButtonsBar from "./components/ButtonsBar";
 import QuoteBox from "./components/QuoteBox";
 import Quote from "./components/Quote";
 
-const fallBackQuotes = require("./API/fallBackQuotes.json");
+const offlineQuotes = require("./API/offlineQuotes.json");
 
 /* When adjusting transitionDuration, also set an equal value in _variables.scss e.g.
 ```scss
@@ -25,16 +25,14 @@ export default class App extends Component {
     super();
     this.onNewQuote = this.onNewQuote.bind(this);
 
-    this.fallbackData = {
-      author: "Pythagoras",
+    this.initialQuoteData = {
+      ...offlineQuotes[Math.floor(Math.random() * offlineQuotes.length)],
       backgroundImage: "",
-      category: "silence",
-      quote: "A fool is known by his speech; and a wise man by silence.",
       color: randomColor({ luminosity: "dark" })
     };
 
     this.state = {
-      ...this.fallbackData,
+      ...this.initialQuoteData,
       fadeBool: false
     };
   }
@@ -65,8 +63,7 @@ export default class App extends Component {
       })
       .catch(error => {
         // handle error
-        console.log(error);
-        this.setState(this.fallbackData);
+        this.setState(this.initialQuoteData);
       });
   }
 
