@@ -23,7 +23,7 @@ const transitionDuration = 750;
 export default class App extends Component {
   constructor() {
     super();
-    this.onNewQuote = this.onNewQuote.bind(this);
+    this.newQuote = this.newQuote.bind(this);
 
     this.initialQuoteData = {
       ...offlineQuotes[Math.floor(Math.random() * offlineQuotes.length)],
@@ -38,16 +38,15 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    this.onNewQuote(true);
+    this.newQuote();
   }
 
-  onNewQuote(isFirstMount = false) {
+  newQuote() {
     getQuoteData().then(quoteData => {
-      if (!isFirstMount) {
-        // trigger fade out quote
-        this.setState({ fadeBool: false });
-      }
 
+      // trigger fade out quote
+      this.setState({ fadeBool: false });
+      
       let data = {
         ...quoteData,
         color: randomColor({ luminosity: "dark" }),
@@ -83,7 +82,7 @@ export default class App extends Component {
           <ButtonsBar
             author={author}
             color={color}
-            onNewQuote={() => this.onNewQuote(false)}
+            newQuote={this.newQuote}
             quote={quote}
           />
         </QuoteBox>

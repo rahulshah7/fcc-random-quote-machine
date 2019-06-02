@@ -2,7 +2,10 @@ import PropTypes from "prop-types";
 import React from "react";
 import "./ButtonsBar.scss";
 
-const ButtonsBar = props => (
+const ButtonsBar = props => {
+  const handleNewQuote = e => props.newQuote();
+  
+  return (
   <div id="buttons-bar" className="card-action">
     <a
       className="buttons-bar__tweet btn waves-effect waves-light"
@@ -22,18 +25,19 @@ const ButtonsBar = props => (
     <button
       className="buttons-bar__new-quote btn waves-effect waves-light"
       id="new-quote"
-      onClick={props.onNewQuote}
+      onClick={handleNewQuote}
       style={{ backgroundColor: props.color }}
     >
       New Quote
     </button>
   </div>
 );
+      }
 
 ButtonsBar.propTypes = {
   author: PropTypes.string,
   color: PropTypes.string,
-  onNewQuote: PropTypes.func,
+  newQuote: PropTypes.func,
   quote: PropTypes.string
 };
 
