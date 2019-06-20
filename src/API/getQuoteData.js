@@ -10,7 +10,7 @@ const offlineQuotes = require("./offlineQuotes.json");
 const getQuoteData = () =>
   new Promise(resolve => {
     axios
-      .get(endpoint, {timeout: 500})
+      .get(endpoint, { timeout: 2500 })
       .then(response => {
         const { author, category, quote } = response.data;
         resolve({ author, category, quote });
